@@ -22,7 +22,6 @@ creds = {
 url = "http://104.214.186.131:8000"
 
 
-
 def find_nonce():
     pow_prefix = creds["pow_prefix"]
     difficulty = 5
@@ -40,14 +39,16 @@ def find_nonce():
 
 
 def generate_keys():
-        public_key, private_key = generate_keypair()
-        
-        print(f"Public Key (hex): {public_key.hex()[:32]}...")
-        print(f" Length: {int.from_bytes(public_key).bit_length()}, Hash Length: {len(public_key.hex())}" )
-        print(f"Private Key (hex): {private_key.hex()[:32]}...")
-        print(f" Length: {int.from_bytes(private_key).bit_length()}, Hash Length: {len(private_key.hex())}" )
-        
-        return public_key, private_key
+    public_key, private_key = generate_keypair()
+
+    print(f"Public Key (hex): {public_key.hex()[:32]}...")
+    print(f" Length: {int.from_bytes(public_key).bit_length()
+                      }, Hash Length: {len(public_key.hex())}")
+    print(f"Private Key (hex): {private_key.hex()[:32]}...")
+    print(f" Length: {int.from_bytes(private_key).bit_length()
+                      }, Hash Length: {len(private_key.hex())}")
+
+    return public_key, private_key
 
 
 def validate_keys(pub, priv):
@@ -65,7 +66,7 @@ def activate_account(nonce, public_key):
     payload = {
         "username": creds["username"],
         "password": creds["password"],
-        "nonce":nonce,
+        "nonce": nonce,
         "public_key": base64.b64encode(public_key).decode('utf-8')
     }
 
@@ -99,15 +100,17 @@ def update_pubkey(newpubkey):
     return response
 
 
-def read_and_sign_file(tahap : int, privkey):
+def read_and_sign_file(tahap: int, privkey):
     path = f"bagian-a/{creds['username']}_A_{tahap}.pdf"
     pdf = open(path, "rb").read()
 
     signature = sign(privkey, pdf)
     signature_b64 = base64.b64encode(signature).decode('utf-8')
 
-    open(f"submissions/bagian-a/{creds["username"]}_A_{tahap}.pdf", "wb").write(pdf)
-    open(f"submissions/bagian-a/{creds["username"]}_A_{tahap}.pdf.sign", "w").write(signature_b64)
+    open(f"submissions/bagian-a/{creds["username"]
+                                 }_A_{tahap}.pdf", "wb").write(pdf)
+    open(f"submissions/bagian-a/{creds["username"]
+                                 }_A_{tahap}.pdf.sign", "w").write(signature_b64)
 
     return pdf, signature_b64
 
@@ -131,7 +134,7 @@ def submit_a(tahap: int, privkey, pubkey):
 
     pdf, signature = read_and_sign_file(tahap, privkey)
     validate_file(pdf, signature, pubkey)
-    
+
     secret = base64.b32encode(creds["totp_secret"].encode()).decode()
     totp = pyotp.TOTP(secret)
     totp_code = totp.now()
@@ -147,17 +150,19 @@ def submit_a(tahap: int, privkey, pubkey):
     }
 
     file_data = {
-        'file' : (f'{creds['username']}_A_{tahap}.pdf', pdf, 'application/pdf')
+        'file': (f'{creds['username']}_A_{tahap}.pdf', pdf, 'application/pdf')
     }
     debug_payload = data_data.copy()
-    debug_payload["signature"] = signature[:100] + "..." if len(signature) > 100 else signature
+    debug_payload["signature"] = signature[:100] + \
+        "..." if len(signature) > 100 else signature
     print(json.dumps(debug_payload, indent=2))
 
     print(f"\nFilename: {file_data['file'][0]}")
     print(f"File size: {len(file_data['file'][1])} bytes")
     print(f"Content type: {file_data['file'][2]}\n")
 
-    response = requests.post(url + "/stage-a/submit", data=data_data,files=file_data)
+    response = requests.post(url + "/stage-a/submit",
+                             data=data_data, files=file_data)
     print(f"Status: {response.status_code}")
     print(f"Response: {response.json()}")
     return response
@@ -173,14 +178,15 @@ def get_submissions():
         "totp_code": totp_code
     }
 
-    response = requests.get(url + f"/user/{creds['username']}/submissions", params=params)
+    response = requests.get(
+        url + f"/user/{creds['username']}/submissions", params=params)
     print(f"Status: {response.status_code}")
-    print(f"Response: {response.json()}")
+    print(json.dumps(response.json(), indent=2))
 
 
 def get_math():
     response = requests.get(url + "/challenge-math")
-    question = response.json()["question"] 
+    question = response.json()["question"]
     answer = eval(question.split("||")[0])
     return response, question, answer
 
@@ -195,17 +201,17 @@ def get_accounts():
             print(item["username"])
     print(f"Total: {len(active_list)}")
     return response
-     
+
 
 def get_stats():
     response = requests.get(url + "/stats")
-    print(print(json.dumps(response.json(), indent=2)))
+    print(json.dumps(response.json(), indent=2))
     return response
 
 
 def get_health():
     response = requests.get(url + "/health")
-    print(print(json.dumps(response.json(), indent=2)))
+    print(json.dumps(response.json(), indent=2))
     return response
 
 
@@ -216,9 +222,9 @@ if __name__ == "__main__":
         public_key, private_key = generate_keys()
         validate_keys(public_key, private_key)
 
-        open("safe/.nonce", "w").write(str(nonce))         
-        open("safe/.pub", "wb").write(public_key)         
-        open("safe/.priv", "wb").write(private_key)    
+        open("safe/.nonce", "w").write(str(nonce))
+        open("safe/.pub", "wb").write(public_key)
+        open("safe/.priv", "wb").write(private_key)
 
     try:
         nonce = int(open("safe/.nonce").read())
@@ -236,14 +242,15 @@ if __name__ == "__main__":
 
     if "ACCOUNTS" in sys.argv:
         res = get_accounts()
-        open("safe/accounts.txt", "w").write(json.dumps(res.json(), indent=4, sort_keys=True))
+        open("safe/accounts.txt",
+             "w").write(json.dumps(res.json(), indent=4, sort_keys=True))
 
     if "STATS" in sys.argv:
         res = get_stats()
 
     if "HEALTH" in sys.argv:
         res = get_health()
-    
+
     if "SIGNTEST" in sys.argv:
         pdf = open(sys.argv[2], "rb").read()
         signature = open(sys.argv[3], "r").read()
@@ -257,13 +264,14 @@ if __name__ == "__main__":
         else:
             print('Incorrect Server Key!')
             exit()
-    
+
     if "SUBMIT" in sys.argv:
         if sys.argv[2] == "A":
             res = submit_a(int(sys.argv[3]), private_key, public_key)
 
         log_num = os.getenv('SUBMIT')
-        open(f"safe/submit_log{log_num}.txt", "w").write(json.dumps(res.json(), indent=4, sort_keys=True))
+        open(f"safe/submit_log{log_num}.txt",
+             "w").write(json.dumps(res.json(), indent=4, sort_keys=True))
         dotenv.set_key('.env', 'SUBMIT', str(int(log_num)+1))
 
     if "CHECKSUB" in sys.argv:
