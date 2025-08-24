@@ -1,0 +1,127 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 OPR/120.0.0.0" version="28.0.7">
+  <diagram name="Page-1" id="fKGwYnQifc-Lo2MhiRWD">
+    <mxGraphModel dx="1242" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-1" value="" style="whiteSpace=wrap;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="560" width="700" height="133" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-2" value="" style="whiteSpace=wrap;strokeWidth=2;fillStyle=auto;perimeterSpacing=2;rounded=0;shadow=1;glass=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="190" width="700" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-4" value="" style="whiteSpace=wrap;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="50" y="303" width="680" height="227" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-5" value="" style="whiteSpace=wrap;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="70" width="480" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-6" value="Opera Epiclese" style="whiteSpace=wrap;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="150" y="100" width="166" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-7" value="Gardes" style="whiteSpace=wrap;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="330" y="100" width="110" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-8" value="Klien Perusahaan" style="whiteSpace=wrap;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="455" y="100" width="155" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-44" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.522;entryY=0.005;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="4zl8Qu2DYgbCBnQwSDRM-9" target="4zl8Qu2DYgbCBnQwSDRM-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-45" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="4zl8Qu2DYgbCBnQwSDRM-9" target="4zl8Qu2DYgbCBnQwSDRM-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="514" y="303" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-9" value="API Gateway" style="whiteSpace=wrap;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="310" y="210" width="150" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-56" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4zl8Qu2DYgbCBnQwSDRM-10" target="4zl8Qu2DYgbCBnQwSDRM-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-10" value="Layanan Manajemen Kasus" style="whiteSpace=wrap;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="63" y="343" width="190" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4zl8Qu2DYgbCBnQwSDRM-11" target="4zl8Qu2DYgbCBnQwSDRM-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-11" value="Layanan E-Litigation" style="whiteSpace=wrap;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="220" y="430" width="166" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-53" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="4zl8Qu2DYgbCBnQwSDRM-12" target="4zl8Qu2DYgbCBnQwSDRM-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-12" value="Layanan Digital Legal Archive" style="whiteSpace=wrap;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="534" y="340" width="190" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-54" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="4zl8Qu2DYgbCBnQwSDRM-13" target="4zl8Qu2DYgbCBnQwSDRM-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-13" value="Layanan Autentikasi &amp; Validasi Dokumen" style="whiteSpace=wrap;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="394" y="430" width="173" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-16" value="Database Manajemen Kasus" style="whiteSpace=wrap;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="96" y="580" width="124" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-18" value="" style="curved=0;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.25;entryY=0;rounded=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4zl8Qu2DYgbCBnQwSDRM-6" target="4zl8Qu2DYgbCBnQwSDRM-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-19" value="" style="curved=0;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;entryDx=0;entryDy=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="4zl8Qu2DYgbCBnQwSDRM-7" target="4zl8Qu2DYgbCBnQwSDRM-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="525.5" y="99" as="sourcePoint" />
+            <mxPoint x="560" y="199" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-20" value="" style="curved=0;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.75;entryY=0;rounded=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4zl8Qu2DYgbCBnQwSDRM-8" target="4zl8Qu2DYgbCBnQwSDRM-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-24" value="" style="curved=0;startArrow=none;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="4zl8Qu2DYgbCBnQwSDRM-9" target="4zl8Qu2DYgbCBnQwSDRM-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-39" value="&lt;span style=&quot;font-size: 25px;&quot;&gt;Klien&lt;/span&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="350" y="70" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-41" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Platform terpusat FCC&lt;/font&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="45" y="222" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-43" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.486;entryY=0.021;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="4zl8Qu2DYgbCBnQwSDRM-9" target="4zl8Qu2DYgbCBnQwSDRM-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-46" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;i style=&quot;&quot;&gt;Microservices&lt;/i&gt;&lt;/font&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="275" y="375" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-47" value="Database E-Litigation" style="whiteSpace=wrap;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="241" y="580" width="124" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-48" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Database Transaksional&lt;/font&gt;" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="275" y="663" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-51" value="Database Legal Archive" style="whiteSpace=wrap;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="567" y="580" width="124" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-52" value="Database Autentikasi dan Validasi Dokumen" style="whiteSpace=wrap;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="418.5" y="580" width="124" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-57" value="" style="whiteSpace=wrap;strokeWidth=2;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="460" width="180" height="123" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-58" value="Penyimpanan Arsip" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="730" y="460" width="240" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-17" value="Database Arsip &amp; Dokumen" style="whiteSpace=wrap;strokeWidth=2;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="770" y="492" width="160" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="4zl8Qu2DYgbCBnQwSDRM-59" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="4zl8Qu2DYgbCBnQwSDRM-12" target="4zl8Qu2DYgbCBnQwSDRM-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

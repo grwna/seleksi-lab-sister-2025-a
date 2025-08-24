@@ -20,6 +20,7 @@ creds = {
 }
 
 url = "http://104.214.186.131:8000"
+github = "https://github.com/grwna/seleksi-lab-sister-2025-b-2"
 
 
 def find_nonce():
@@ -115,11 +116,11 @@ def read_and_sign_file(tahap: int, privkey):
     return pdf, signature_b64
 
 
-def validate_file(pdf_data, signature_b64, public_key):
+def validate_sign(data, signature_b64, public_key):
     signature = base64.b64decode(signature_b64)
 
     try:
-        if not verify(public_key, pdf_data, signature):
+        if not verify(public_key, data, signature):
             raise Exception("Signature verification failed")
 
         print("File signature is valid!")
@@ -133,7 +134,7 @@ def submit_a(tahap: int, privkey, pubkey):
     assert tahap == 1 or tahap == 2
 
     pdf, signature = read_and_sign_file(tahap, privkey)
-    validate_file(pdf, signature, pubkey)
+    validate_sign(pdf, signature, pubkey)
 
     secret = base64.b32encode(creds["totp_secret"].encode()).decode()
     totp = pyotp.TOTP(secret)
@@ -168,6 +169,40 @@ def submit_a(tahap: int, privkey, pubkey):
     return response
 
 
+def submit_b(tahap: int, privkey, pubkey):
+    assert tahap == 1 or tahap == 2
+
+    secret = base64.b32encode(creds["totp_secret"].encode()).decode()
+    totp = pyotp.TOTP(secret)
+    totp_code = totp.now()
+
+    signature = sign(privkey, github.encode())
+    signature_b64 = base64.b64encode(signature).decode('utf-8')
+    validate_sign(github.encode(), signature_b64, pubkey)
+
+    _, question, answer = get_math()
+    data_data = {
+        "github_url": github,
+        "totp_code": totp_code,
+        "math_question": question,
+        "math_answer": answer,
+        "signature": signature_b64,
+        "tahap": tahap,
+    }
+
+    debug_payload = data_data.copy()
+    debug_payload["signature"] = signature_b64[:100] + \
+        "..." if len(signature) > 100 else signature
+    print(json.dumps(debug_payload, indent=2))
+
+    params = {"username": creds['username']}
+    response = requests.post(url + "/stage-b/submit",
+                             json=data_data, params=params)
+    print(f"Status: {response.status_code}")
+    print(f"Response: {response.json()}")
+    return response
+
+
 def get_submissions():
     secret = base64.b32encode(creds["totp_secret"].encode()).decode()
     totp = pyotp.TOTP(secret)
@@ -192,6 +227,9 @@ def get_math():
 
 
 def get_accounts():
+    old = [x.strip() for x in open("safe/account-list.txt", "r").readlines()]
+    open("safe/account-list.txt", "w").write("")
+
     response = requests.get(url + "/accounts")
 
     active_list = []
@@ -199,7 +237,16 @@ def get_accounts():
         if item["status"] == "active":
             active_list.append(item["username"])
             print(item["username"])
+            open("safe/account-list.txt", "a").write(item["username"] + "\n")
     print(f"Total: {len(active_list)}")
+
+    new = [x for x in active_list if x not in old]
+    if len(new):
+        print("New Accounts: ", end="")
+        print(new)
+    else:
+        print("No New Accounts!")
+
     return response
 
 
@@ -254,7 +301,7 @@ if __name__ == "__main__":
     if "SIGNTEST" in sys.argv:
         pdf = open(sys.argv[2], "rb").read()
         signature = open(sys.argv[3], "r").read()
-        validate_file(pdf, signature, public_key)
+        validate_sign(pdf, signature, public_key)
 
     if "PUBKEY" in sys.argv:
         res = update_pubkey(public_key)
@@ -268,6 +315,9 @@ if __name__ == "__main__":
     if "SUBMIT" in sys.argv:
         if sys.argv[2] == "A":
             res = submit_a(int(sys.argv[3]), private_key, public_key)
+
+        elif sys.argv[2] == "B":
+            res = submit_b(int(sys.argv[3]), private_key, public_key)
 
         log_num = os.getenv('SUBMIT')
         open(f"safe/submit_log{log_num}.txt",
